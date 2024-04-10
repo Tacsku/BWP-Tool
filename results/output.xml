@@ -1,38 +1,93 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.0 (Python 3.12.2 on win32)" generated="2024-04-10T13:01:50.325193" rpa="false" schemaversion="5">
+<robot generator="Robot 7.0 (Python 3.12.2 on win32)" generated="2024-04-10T14:25:55.646655" rpa="false" schemaversion="5">
 <suite id="s1" name="BWP Tool Test" source="C:\Users\a200108674\OneDrive - Deutsche Telekom AG\Desktop\Robot Project\BWP_Tool_Test">
 <suite id="s1-s1" name="Tests" source="C:\Users\a200108674\OneDrive - Deutsche Telekom AG\Desktop\Robot Project\BWP_Tool_Test\tests">
 <suite id="s1-s1-s1" name="Bwp Tool Test" source="C:\Users\a200108674\OneDrive - Deutsche Telekom AG\Desktop\Robot Project\BWP_Tool_Test\tests\bwp_tool_test.robot">
 <test id="s1-s1-s1-t1" name="BWP Website Test - Partner, Location and Device Test" line="7">
 <kw name="Open Chrome" owner="variables">
 <kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2024-04-10T13:01:50.952240" level="INFO">Opening browser 'Chrome' to base url 'https://bwpool.azurewebsites.net/'.</msg>
-<msg time="2024-04-10T13:01:52.120673" level="WARN">Exception managing chrome: error sending request for url (https://googlechromelabs.github.io/chrome-for-testing/known-good-versions-with-downloads.json): error trying to connect: dns error: No such host is known. (os error 11001)</msg>
-<msg time="2024-04-10T13:01:52.127225" level="WARN">The chromedriver version (122.0.6261.128) detected in PATH at C:\Users\a200108674\OneDrive - Deutsche Telekom AG\Desktop\Test Automation Engineer Study Files\4.exam Robot Framework - Bence\chromedriver-win64\chromedriver.exe might not be compatible with the detected chrome version (123.0.6312.106); currently, chromedriver  is recommended for chrome 123.*, so it is advised to delete the driver in PATH and retry</msg>
+<msg time="2024-04-10T14:25:56.268891" level="INFO">Opening browser 'Chrome' to base url 'https://bwpool.azurewebsites.net/'.</msg>
+<msg time="2024-04-10T14:25:57.384013" level="WARN">Exception managing chrome: error sending request for url (https://googlechromelabs.github.io/chrome-for-testing/known-good-versions-with-downloads.json): error trying to connect: dns error: No such host is known. (os error 11001)</msg>
+<msg time="2024-04-10T14:25:57.390686" level="WARN">The chromedriver version (122.0.6261.128) detected in PATH at C:\Users\a200108674\OneDrive - Deutsche Telekom AG\Desktop\Test Automation Engineer Study Files\4.exam Robot Framework - Bence\chromedriver-win64\chromedriver.exe might not be compatible with the detected chrome version (123.0.6312.106); currently, chromedriver  is recommended for chrome 123.*, so it is advised to delete the driver in PATH and retry</msg>
 <arg>${MAIN_URL}</arg>
 <arg>${BROWSER}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2024-04-10T13:01:50.951240" elapsed="5.540814"/>
+<status status="PASS" start="2024-04-10T14:25:56.266680" elapsed="5.104467"/>
 </kw>
-<status status="PASS" start="2024-04-10T13:01:50.948360" elapsed="5.544712"/>
+<status status="PASS" start="2024-04-10T14:25:56.263757" elapsed="5.108589"/>
 </kw>
 <kw name="Navigate to Partners" owner="variables">
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2024-04-10T13:01:56.496083" level="INFO">Clicking element '//a[@href="Customer"]'.</msg>
+<msg time="2024-04-10T14:26:01.374569" level="INFO">Clicking element '//a[@href="Customer"]'.</msg>
 <arg>${PARTNERS_URL}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2024-04-10T13:01:56.495084" elapsed="0.924036"/>
+<status status="PASS" start="2024-04-10T14:26:01.373536" elapsed="0.764369"/>
 </kw>
-<status status="PASS" start="2024-04-10T13:01:56.494082" elapsed="0.925038"/>
+<status status="PASS" start="2024-04-10T14:26:01.372346" elapsed="0.765559"/>
 </kw>
-<status status="PASS" start="2024-04-10T13:01:50.947350" elapsed="6.471770"/>
+<kw name="Get random User Data from local JSON File" owner="variables">
+<kw name="Get File" owner="OperatingSystem">
+<msg time="2024-04-10T14:26:02.139918" level="INFO" html="true">Getting file '&lt;a href="file://C:\Users\a200108674\OneDrive - Deutsche Telekom AG\Desktop\Robot Project\BWP_Tool_Test\resources\random_people.json"&gt;C:\Users\a200108674\OneDrive - Deutsche Telekom AG\Desktop\Robot Project\BWP_Tool_Test\resources\random_people.json&lt;/a&gt;'.</msg>
+<msg time="2024-04-10T14:26:02.141219" level="INFO">${json_file} = [
+    {
+      "id": 7039,
+      "uid": "c02ac60c-23d5-4754-91d1-eab16e3304fc",
+      "password": "B5DIXvcAUu",
+      "first_name": "Roni",
+      "last_name": "Boyer",
+      "username": "roni.boyer",
+ ...</msg>
+<var>${json_file}</var>
+<arg>C:\\Users\\a200108674\\OneDrive - Deutsche Telekom AG\\Desktop\\Robot Project\\BWP_Tool_Test\\resources/random_people.json</arg>
+<doc>Returns the contents of a specified file.</doc>
+<status status="PASS" start="2024-04-10T14:26:02.138917" elapsed="0.003321"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2024-04-10T14:26:02.153922" level="INFO">${json_data} = [{'id': 7039, 'uid': 'c02ac60c-23d5-4754-91d1-eab16e3304fc', 'password': 'B5DIXvcAUu', 'first_name': 'Roni', 'last_name': 'Boyer', 'username': 'roni.boyer', 'email': 'roni.boyer@email.com', 'avatar': ...</msg>
+<var>${json_data}</var>
+<arg>json.loads('''${json_file}''')</arg>
+<arg>json</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2024-04-10T14:26:02.142238" elapsed="0.012692"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-04-10T14:26:02.157474" level="INFO">${first_name} = Roni</msg>
+<var>${first_name}</var>
+<arg>${json_data}[0][first_name]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-04-10T14:26:02.154930" elapsed="0.002544"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-04-10T14:26:02.159474" level="INFO">${last_name} = Boyer</msg>
+<var>${last_name}</var>
+<arg>${json_data}[0][last_name]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-04-10T14:26:02.158474" elapsed="0.001000"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-04-10T14:26:02.162948" level="INFO">${name} = Roni Boyer</msg>
+<var>${name}</var>
+<arg>${first_name} ${last_name}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-04-10T14:26:02.160495" elapsed="0.003846"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-04-10T14:26:02.168848" level="INFO">${email} = roni.boyer@email.com</msg>
+<var>${email}</var>
+<arg>${json_data}[0][email]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-04-10T14:26:02.166369" elapsed="0.003522"/>
+</kw>
+<status status="PASS" start="2024-04-10T14:26:02.137905" elapsed="0.031986"/>
+</kw>
+<status status="PASS" start="2024-04-10T14:25:56.261551" elapsed="5.909337"/>
 </test>
 <doc>BWP Website Testing - Partner, Location and Device Test</doc>
-<status status="PASS" start="2024-04-10T13:01:50.381845" elapsed="7.040600"/>
+<status status="PASS" start="2024-04-10T14:25:55.710698" elapsed="6.463597"/>
 </suite>
-<status status="PASS" start="2024-04-10T13:01:50.375722" elapsed="7.053153"/>
+<status status="PASS" start="2024-04-10T14:25:55.705161" elapsed="6.471665"/>
 </suite>
-<status status="PASS" start="2024-04-10T13:01:50.333069" elapsed="7.097977"/>
+<status status="PASS" start="2024-04-10T14:25:55.658584" elapsed="6.527788"/>
 </suite>
 <statistics>
 <total>
@@ -47,7 +102,7 @@
 </suite>
 </statistics>
 <errors>
-<msg time="2024-04-10T13:01:52.120673" level="WARN">Exception managing chrome: error sending request for url (https://googlechromelabs.github.io/chrome-for-testing/known-good-versions-with-downloads.json): error trying to connect: dns error: No such host is known. (os error 11001)</msg>
-<msg time="2024-04-10T13:01:52.127225" level="WARN">The chromedriver version (122.0.6261.128) detected in PATH at C:\Users\a200108674\OneDrive - Deutsche Telekom AG\Desktop\Test Automation Engineer Study Files\4.exam Robot Framework - Bence\chromedriver-win64\chromedriver.exe might not be compatible with the detected chrome version (123.0.6312.106); currently, chromedriver  is recommended for chrome 123.*, so it is advised to delete the driver in PATH and retry</msg>
+<msg time="2024-04-10T14:25:57.384013" level="WARN">Exception managing chrome: error sending request for url (https://googlechromelabs.github.io/chrome-for-testing/known-good-versions-with-downloads.json): error trying to connect: dns error: No such host is known. (os error 11001)</msg>
+<msg time="2024-04-10T14:25:57.390686" level="WARN">The chromedriver version (122.0.6261.128) detected in PATH at C:\Users\a200108674\OneDrive - Deutsche Telekom AG\Desktop\Test Automation Engineer Study Files\4.exam Robot Framework - Bence\chromedriver-win64\chromedriver.exe might not be compatible with the detected chrome version (123.0.6312.106); currently, chromedriver  is recommended for chrome 123.*, so it is advised to delete the driver in PATH and retry</msg>
 </errors>
 </robot>

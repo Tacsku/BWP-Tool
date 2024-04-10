@@ -7,3 +7,4 @@ Resource    variables.resource
 BWP Website Test - Partner, Location and Device Test
     Open Chrome
     Navigate to Partners
+    Get random User Data from local JSON File
