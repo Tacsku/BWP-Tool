@@ -1,30 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.0 (Python 3.12.2 on win32)" generated="2024-04-10T12:56:36.677311" rpa="false" schemaversion="5">
+<robot generator="Robot 7.0 (Python 3.12.2 on win32)" generated="2024-04-10T13:01:50.325193" rpa="false" schemaversion="5">
 <suite id="s1" name="BWP Tool Test" source="C:\Users\a200108674\OneDrive - Deutsche Telekom AG\Desktop\Robot Project\BWP_Tool_Test">
 <suite id="s1-s1" name="Tests" source="C:\Users\a200108674\OneDrive - Deutsche Telekom AG\Desktop\Robot Project\BWP_Tool_Test\tests">
 <suite id="s1-s1-s1" name="Bwp Tool Test" source="C:\Users\a200108674\OneDrive - Deutsche Telekom AG\Desktop\Robot Project\BWP_Tool_Test\tests\bwp_tool_test.robot">
 <test id="s1-s1-s1-t1" name="BWP Website Test - Partner, Location and Device Test" line="7">
 <kw name="Open Chrome" owner="variables">
 <kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2024-04-10T12:56:37.124743" level="INFO">Opening browser 'Chrome' to base url 'https://bwpool.azurewebsites.net/'.</msg>
-<msg time="2024-04-10T12:56:40.496122" level="WARN">Exception managing chrome: error sending request for url (https://googlechromelabs.github.io/chrome-for-testing/known-good-versions-with-downloads.json): error trying to connect: dns error: No such host is known. (os error 11001)</msg>
-<msg time="2024-04-10T12:56:40.499282" level="WARN">The chromedriver version (122.0.6261.128) detected in PATH at C:\Users\a200108674\OneDrive - Deutsche Telekom AG\Desktop\Test Automation Engineer Study Files\4.exam Robot Framework - Bence\chromedriver-win64\chromedriver.exe might not be compatible with the detected chrome version (123.0.6312.106); currently, chromedriver  is recommended for chrome 123.*, so it is advised to delete the driver in PATH and retry</msg>
-<msg time="2024-04-10T12:56:40.505069" level="WARN">Error sending stats to Plausible: error sending request for url (https://plausible.io/api/event): error trying to connect: dns error: No such host is known. (os error 11001)</msg>
+<msg time="2024-04-10T13:01:50.952240" level="INFO">Opening browser 'Chrome' to base url 'https://bwpool.azurewebsites.net/'.</msg>
+<msg time="2024-04-10T13:01:52.120673" level="WARN">Exception managing chrome: error sending request for url (https://googlechromelabs.github.io/chrome-for-testing/known-good-versions-with-downloads.json): error trying to connect: dns error: No such host is known. (os error 11001)</msg>
+<msg time="2024-04-10T13:01:52.127225" level="WARN">The chromedriver version (122.0.6261.128) detected in PATH at C:\Users\a200108674\OneDrive - Deutsche Telekom AG\Desktop\Test Automation Engineer Study Files\4.exam Robot Framework - Bence\chromedriver-win64\chromedriver.exe might not be compatible with the detected chrome version (123.0.6312.106); currently, chromedriver  is recommended for chrome 123.*, so it is advised to delete the driver in PATH and retry</msg>
 <arg>${MAIN_URL}</arg>
 <arg>${BROWSER}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2024-04-10T12:56:37.123668" elapsed="7.345849"/>
+<status status="PASS" start="2024-04-10T13:01:50.951240" elapsed="5.540814"/>
 </kw>
-<status status="PASS" start="2024-04-10T12:56:37.121668" elapsed="7.347849"/>
+<status status="PASS" start="2024-04-10T13:01:50.948360" elapsed="5.544712"/>
 </kw>
-<status status="PASS" start="2024-04-10T12:56:37.119150" elapsed="7.351386"/>
+<kw name="Navigate to Partners" owner="variables">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-04-10T13:01:56.496083" level="INFO">Clicking element '//a[@href="Customer"]'.</msg>
+<arg>${PARTNERS_URL}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-04-10T13:01:56.495084" elapsed="0.924036"/>
+</kw>
+<status status="PASS" start="2024-04-10T13:01:56.494082" elapsed="0.925038"/>
+</kw>
+<status status="PASS" start="2024-04-10T13:01:50.947350" elapsed="6.471770"/>
 </test>
 <doc>BWP Website Testing - Partner, Location and Device Test</doc>
-<status status="PASS" start="2024-04-10T12:56:36.761316" elapsed="7.710248"/>
+<status status="PASS" start="2024-04-10T13:01:50.381845" elapsed="7.040600"/>
 </suite>
-<status status="PASS" start="2024-04-10T12:56:36.754254" elapsed="7.720760"/>
+<status status="PASS" start="2024-04-10T13:01:50.375722" elapsed="7.053153"/>
 </suite>
-<status status="PASS" start="2024-04-10T12:56:36.687036" elapsed="7.790363"/>
+<status status="PASS" start="2024-04-10T13:01:50.333069" elapsed="7.097977"/>
 </suite>
 <statistics>
 <total>
@@ -39,8 +47,7 @@
 </suite>
 </statistics>
 <errors>
-<msg time="2024-04-10T12:56:40.496122" level="WARN">Exception managing chrome: error sending request for url (https://googlechromelabs.github.io/chrome-for-testing/known-good-versions-with-downloads.json): error trying to connect: dns error: No such host is known. (os error 11001)</msg>
-<msg time="2024-04-10T12:56:40.499282" level="WARN">The chromedriver version (122.0.6261.128) detected in PATH at C:\Users\a200108674\OneDrive - Deutsche Telekom AG\Desktop\Test Automation Engineer Study Files\4.exam Robot Framework - Bence\chromedriver-win64\chromedriver.exe might not be compatible with the detected chrome version (123.0.6312.106); currently, chromedriver  is recommended for chrome 123.*, so it is advised to delete the driver in PATH and retry</msg>
-<msg time="2024-04-10T12:56:40.505069" level="WARN">Error sending stats to Plausible: error sending request for url (https://plausible.io/api/event): error trying to connect: dns error: No such host is known. (os error 11001)</msg>
+<msg time="2024-04-10T13:01:52.120673" level="WARN">Exception managing chrome: error sending request for url (https://googlechromelabs.github.io/chrome-for-testing/known-good-versions-with-downloads.json): error trying to connect: dns error: No such host is known. (os error 11001)</msg>
+<msg time="2024-04-10T13:01:52.127225" level="WARN">The chromedriver version (122.0.6261.128) detected in PATH at C:\Users\a200108674\OneDrive - Deutsche Telekom AG\Desktop\Test Automation Engineer Study Files\4.exam Robot Framework - Bence\chromedriver-win64\chromedriver.exe might not be compatible with the detected chrome version (123.0.6312.106); currently, chromedriver  is recommended for chrome 123.*, so it is advised to delete the driver in PATH and retry</msg>
 </errors>
 </robot>
