@@ -135,3 +135,9 @@ Search in List
     Input Text    ${SEARCHBAR}    ${name}
     Sleep    1
     Click Element    ${SEARCH_ICON}
+
+Navigate to Profile
+    [Arguments]    ${person_body}
+    ${street_name}    Set Variable    ${person_body}[address][street_name]
+    Sleep    1
+    Click Link    //a[contains(.,"${street_name}")]

@@ -16,3 +16,4 @@ BWP Website Test - Partner, Location and Device Test
     Export to Excel
     Navigate to Locations
     Search in List    ${person_body}
+    Navigate to Profile    ${person_body}
