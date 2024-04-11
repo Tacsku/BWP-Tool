@@ -24,6 +24,9 @@ ${DEVICE_LOCATION_XPATH}    //input[@placeholder="Telephely"]
 ${DEVICE_DESCRIPTION_XPATH}    //textarea[@id="Desc"]
 ${DEVICE_COMMENT_XPATH}    //textarea[@id="Comm"]
 ${EXCEL_EXPORT_BUTTON}    //button[@aria-label="Excel Export"]
+${SEARCHBAR}    //input[@id="Grid_ToolbarSearchBox"]
+${SEARCH_ICON}    //span[@class='e-searchclear e-search-icon e-icons e-input-group-icon']
+
 
 *** Keywords ***
 Open Chrome
@@ -122,3 +125,13 @@ Add a Device
 Export to Excel
     Wait Until Element Is Visible    ${EXCEL_EXPORT_BUTTON}
     Click Button    ${EXCEL_EXPORT_BUTTON}
+
+Search in List
+    [Arguments]    ${person_body}
+    ${first_name}    Set Variable   ${person_body}[first_name]
+    ${last_name}    Set Variable    ${person_body}[last_name]
+    ${name}    Set Variable    ${first_name} ${last_name}
+    Sleep    1
+    Input Text    ${SEARCHBAR}    ${name}
+    Sleep    1
+    Click Element    ${SEARCH_ICON}
