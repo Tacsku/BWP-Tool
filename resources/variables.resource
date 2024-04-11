@@ -1,25 +1,47 @@
 *** Settings ***
 Library    SeleniumLibrary
 Library    OperatingSystem
+Library    String
 
 *** Variables ***
 ${BROWSER}    Chrome
 ${MAIN_URL}    https://bwpool.azurewebsites.net/
 ${PARTNERS_URL}    //a[@href="Customer"]
+${PARTNER_NAME_XPATH}    //input[@id="name"]
+${PARTNER_EMAIL_XPATH}    //input[@id="email"]
+${PARTNER_COMMENT_XPATH}    //input[@id="comment"]
+${ADD_BUTTON}    //button[@aria-label="Add"]
+${SAVE_BUTTON}    //button[@class="e-control e-btn e-lib e-control e-btn e-lib e-primary e-flat"]
 
 *** Keywords ***
 Open Chrome
     Open Browser    ${MAIN_URL}    ${BROWSER}
 
 Navigate to Partners
+    Wait Until Element Is Visible    ${PARTNERS_URL}
     Click Element    ${PARTNERS_URL}
 
 Get random User Data from local JSON File
+    ${index}    Generate Random String    2    [NUMBERS]
     ${json_file}    Get File    ${CURDIR}/random_people.json
     ${json_data}    Evaluate    json.loads('''${json_file}''')    json
-    ${first_name}    Set Variable    ${json_data}[0][first_name]
-    ${last_name}    Set Variable    ${json_data}[0][last_name]
+    Set Global Variable    ${body}    ${json_data}[${index}]
+    RETURN    ${json_data}[${index}]
+ 
+Add a Partner
+    [Arguments]    ${body}
+    ${first_name}    Set Variable   ${body}[first_name]
+    ${last_name}    Set Variable    ${body}[last_name]
     ${name}    Set Variable    ${first_name} ${last_name}
-    ${email}    Set Variable    ${json_data}[0][email]
+    ${email}    Set Variable    ${body}[email]
+    ${id}    Set Variable    ${body}[id]
+    Sleep    5s
+    Wait Until Element Is Visible    ${ADD_BUTTON}
+    Click Button    ${ADD_BUTTON}
+    Wait Until Element Is Visible    ${PARTNER_NAME_XPATH}
+    Input Text    ${PARTNER_NAME_XPATH}    ${name}
+    Input Text    ${PARTNER_EMAIL_XPATH}    ${email}
+    Input Text    ${PARTNER_COMMENT_XPATH}    ${id}
+    # Click Button    ${SAVE_BUTTON}
 
     
