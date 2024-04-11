@@ -10,3 +10,4 @@ BWP Website Test - Partner, Location and Device Test
     Add a Partner    ${body}
     Navigate to Locations
     Add a Location    ${body}
+    Navigate to Devices

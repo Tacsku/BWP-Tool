@@ -17,6 +17,7 @@ ${LOCATION_NAME_XPATH}    //input[@placeholder="Ügyfél"]
 ${LOCATION_CITY_XPATH}    //input[@id='varos']
 ${LOCATION_ZIP_CODE_XPATH}    //input[@id='zip']
 ${LOCATION_STREET_XPATH}    //input[@id='utca']
+${DEVICE_URL}    //a[@href="Tool"]
 
 *** Keywords ***
 Open Chrome
@@ -75,5 +76,10 @@ Add a Location
     Input Text    ${LOCATION_CITY_XPATH}    ${city}
     Input Text    ${LOCATION_ZIP_CODE_XPATH}    ${zip_code}
     Input Text    ${LOCATION_STREET_XPATH}    ${street_name}
-    # Click Button    ${SAVE_BUTTON}
+    Click Button    ${SAVE_BUTTON}
+
+Navigate to Devices
+    Wait Until Element Is Visible    ${DEVICE_URL}
+    Click Element    ${DEVICE_URL}
+
  
