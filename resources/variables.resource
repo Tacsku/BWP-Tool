@@ -12,6 +12,7 @@ ${PARTNER_EMAIL_XPATH}    //input[@id="email"]
 ${PARTNER_COMMENT_XPATH}    //input[@id="comment"]
 ${ADD_BUTTON}    //button[@aria-label="Add"]
 ${SAVE_BUTTON}    //button[@class="e-control e-btn e-lib e-control e-btn e-lib e-primary e-flat"]
+${LOCATIONS_URL}    //a[@href="Location"]
 
 *** Keywords ***
 Open Chrome
@@ -22,11 +23,11 @@ Navigate to Partners
     Click Element    ${PARTNERS_URL}
 
 Get random User Data from local JSON File
-    ${index}    Generate Random String    2    [NUMBERS]
+    ${person_index}    Generate Random String    2    [NUMBERS]
     ${json_file}    Get File    ${CURDIR}/random_people.json
     ${json_data}    Evaluate    json.loads('''${json_file}''')    json
-    Set Global Variable    ${body}    ${json_data}[${index}]
-    RETURN    ${json_data}[${index}]
+    Set Global Variable    ${body}    ${json_data}[${person_index}]
+    RETURN    ${json_data}[${person_index}]
  
 Add a Partner
     [Arguments]    ${body}
@@ -42,6 +43,10 @@ Add a Partner
     Input Text    ${PARTNER_NAME_XPATH}    ${name}
     Input Text    ${PARTNER_EMAIL_XPATH}    ${email}
     Input Text    ${PARTNER_COMMENT_XPATH}    ${id}
-    # Click Button    ${SAVE_BUTTON}
+    Click Button    ${SAVE_BUTTON}
+
+Navigate to Locations
+    Wait Until Element Is Visible   ${LOCATIONS_URL} 
+    Click Element    ${LOCATIONS_URL}
 
     
