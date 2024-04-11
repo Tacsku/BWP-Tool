@@ -9,3 +9,4 @@ BWP Website Test - Partner, Location and Device Test
     ${body}    Get random User Data from local JSON File
     Add a Partner    ${body}
     Navigate to Locations
+    Add a Location    ${body}
