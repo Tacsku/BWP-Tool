@@ -13,3 +13,4 @@ BWP Website Test - Partner, Location and Device Test
     Navigate to Devices
     ${device_body}    Get random Device Data from local JSON File
     Add a Device    ${person_body}    ${device_body}
+    Export to Excel

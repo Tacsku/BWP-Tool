@@ -23,7 +23,7 @@ ${DEVICE_NAME_XPATH}    //input[@placeholder="Ügyfél"]
 ${DEVICE_LOCATION_XPATH}    //input[@placeholder="Telephely"]
 ${DEVICE_DESCRIPTION_XPATH}    //textarea[@id="Desc"]
 ${DEVICE_COMMENT_XPATH}    //textarea[@id="Comm"]
-
+${EXCEL_EXPORT_BUTTON}    //button[@aria-label="Excel Export"]
 
 *** Keywords ***
 Open Chrome
@@ -117,4 +117,8 @@ Add a Device
     Click Element    //li[.='${name}']
     Input Text    ${DEVICE_DESCRIPTION_XPATH}    ${platform}
     Input Text    ${DEVICE_COMMENT_XPATH}    ${serial_number}
-    # Click Button    ${SAVE_BUTTON}
+    Click Button    ${SAVE_BUTTON}
+
+Export to Excel
+    Wait Until Element Is Visible    ${EXCEL_EXPORT_BUTTON}
+    Click Button    ${EXCEL_EXPORT_BUTTON}
