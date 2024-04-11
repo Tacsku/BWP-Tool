@@ -6,8 +6,10 @@ Resource    variables.resource
 BWP Website Test - Partner, Location and Device Test
     Open Chrome
     Navigate to Partners
-    ${body}    Get random User Data from local JSON File
-    Add a Partner    ${body}
+    ${person_body}    Get random User Data from local JSON File
+    Add a Partner    ${person_body}
     Navigate to Locations
-    Add a Location    ${body}
+    Add a Location    ${person_body}
     Navigate to Devices
+    ${device_body}    Get random Device Data from local JSON File
+    Add a Device    ${person_body}    ${device_body}
