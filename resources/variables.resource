@@ -104,7 +104,7 @@ Add a Location
     Click Button    ${ADD_BUTTON}
     Wait Until Element Is Visible    ${LOCATION_NAME_XPATH}
     Input Text    ${LOCATION_NAME_XPATH}    ${name}
-    Wait Until Element Is Visible    //li[.='${name}']
+    Sleep    1
     Click Element    //li[.='${name}']
     Input Text    ${LOCATION_CITY_XPATH}    ${city}
     Input Text    ${LOCATION_ZIP_CODE_XPATH}    ${zip_code}
@@ -121,14 +121,13 @@ Add a Device
     ${platform}    Set Variable    ${device_body}[platform]
     ${serial_number}    Set Variable    ${device_body}[serial_number]
 
-
     Sleep    1
     Wait Until Element Is Visible    ${ADD_BUTTON}
     Click Button    ${ADD_BUTTON}
     Wait Until Element Is Visible    ${DEVICE_MAKE_XPATH}   
     Input Text    ${DEVICE_MAKE_XPATH}    ${manufacturer} ${model}   
     Input Text    ${DEVICE_NAME_XPATH}    ${name}   
-    Wait Until Element Is Visible    //li[.='${name}']
+    Sleep    1
     Click Element    //li[.='${name}']
     Input Text    ${DEVICE_DESCRIPTION_XPATH}    ${platform}
     Input Text    ${DEVICE_COMMENT_XPATH}    ${serial_number}
@@ -147,6 +146,3 @@ Search in List
     Input Text    ${SEARCHBAR}    ${name}
     Wait Until Element Is Visible    ${SEARCH_ICON}
     Click Element    ${SEARCH_ICON}
-
-#CODE UNSTABLE
-#RUNTIME SUCCESS DEPENDS ON WEBSITE PERFORMANCE

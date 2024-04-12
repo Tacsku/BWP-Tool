@@ -11,8 +11,10 @@ BWP Website Test - Partner, Location and Device Test
     Navigate to Locations
     Add a Location    ${person_body}
     Navigate to Devices
-    ${device_body}    Get random Device Data from local JSON File
-    Add a Device    ${person_body}    ${device_body}
+    FOR    ${device}    IN RANGE    2
+        ${device_body}    Get random Device Data from local JSON File
+        Add a Device    ${person_body}    ${device_body}
+    END
     Export to Excel
     Navigate to Locations
     Search in List    ${person_body}
