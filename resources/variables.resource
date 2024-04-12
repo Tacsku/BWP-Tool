@@ -55,7 +55,7 @@ Navigate to Profile
     ${street_name}    Set Variable    ${person_body}[address][street_name]
     ${profile}    Set Variable    //a[contains(.,"${street_name}")]
     Wait Until Element Is Visible    ${profile}
-    Sleep    2
+    Sleep    1
     Click Link    ${profile}
 
 Get random User Data from local JSON File
@@ -99,13 +99,12 @@ Add a Location
     ${street_name}    Set Variable    ${person_body}[address][street_name]
     ${zip_code}    Set Variable    ${person_body}[address][zip_code]
 
-    Click Element    ${LOCATIONS_URL}
-    Wait Until Element Is Visible    ${ADD_BUTTON}
     Sleep    1
+    Wait Until Element Is Visible    ${ADD_BUTTON}
     Click Button    ${ADD_BUTTON}
     Wait Until Element Is Visible    ${LOCATION_NAME_XPATH}
     Input Text    ${LOCATION_NAME_XPATH}    ${name}
-    Sleep    1
+    Wait Until Element Is Visible    //li[.='${name}']
     Click Element    //li[.='${name}']
     Input Text    ${LOCATION_CITY_XPATH}    ${city}
     Input Text    ${LOCATION_ZIP_CODE_XPATH}    ${zip_code}
@@ -122,14 +121,14 @@ Add a Device
     ${platform}    Set Variable    ${device_body}[platform]
     ${serial_number}    Set Variable    ${device_body}[serial_number]
 
-    Click Element    ${DEVICE_URL}
-    Wait Until Element Is Visible    ${ADD_BUTTON}
+
     Sleep    1
+    Wait Until Element Is Visible    ${ADD_BUTTON}
     Click Button    ${ADD_BUTTON}
     Wait Until Element Is Visible    ${DEVICE_MAKE_XPATH}   
     Input Text    ${DEVICE_MAKE_XPATH}    ${manufacturer} ${model}   
     Input Text    ${DEVICE_NAME_XPATH}    ${name}   
-    Sleep    1
+    Wait Until Element Is Visible    //li[.='${name}']
     Click Element    //li[.='${name}']
     Input Text    ${DEVICE_DESCRIPTION_XPATH}    ${platform}
     Input Text    ${DEVICE_COMMENT_XPATH}    ${serial_number}
@@ -146,7 +145,7 @@ Search in List
     ${name}    Set Variable    ${first_name} ${last_name}
     Sleep    1
     Input Text    ${SEARCHBAR}    ${name}
-    Sleep    1
+    Wait Until Element Is Visible    ${SEARCH_ICON}
     Click Element    ${SEARCH_ICON}
 
 #CODE UNSTABLE
