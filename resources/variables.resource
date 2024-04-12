@@ -4,29 +4,35 @@ Library    OperatingSystem
 Library    String
 
 *** Variables ***
+#GENERAL CONTROL
 ${BROWSER}    Chrome
 ${MAIN_URL}    https://bwpool.azurewebsites.net/
+${ADD_BUTTON}    //button[@aria-label="Add"]
+${SAVE_BUTTON}    //button[@class="e-control e-btn e-lib e-control e-btn e-lib e-primary e-flat"]
+${EXCEL_EXPORT_BUTTON}    //button[@aria-label="Excel Export"]
+${SEARCHBAR}    //input[@id="Grid_ToolbarSearchBox"]
+${SEARCH_ICON}    //span[@class='e-searchclear e-search-icon e-icons e-input-group-icon']
+
+#PARTNER CONTROL
 ${PARTNERS_URL}    //a[@href="Customer"]
 ${PARTNER_NAME_XPATH}    //input[@id="name"]
 ${PARTNER_EMAIL_XPATH}    //input[@id="email"]
 ${PARTNER_COMMENT_XPATH}    //input[@id="comment"]
-${ADD_BUTTON}    //button[@aria-label="Add"]
-${SAVE_BUTTON}    //button[@class="e-control e-btn e-lib e-control e-btn e-lib e-primary e-flat"]
+
+#LOCATION CONTROL
 ${LOCATIONS_URL}    //a[@href="Location"]
 ${LOCATION_NAME_XPATH}    //input[@placeholder="Ügyfél"]
 ${LOCATION_CITY_XPATH}    //input[@id='varos']
 ${LOCATION_ZIP_CODE_XPATH}    //input[@id='zip']
 ${LOCATION_STREET_XPATH}    //input[@id='utca']
+
+#DEVICE CONTROL
 ${DEVICE_URL}    //a[@href="Tool"]
 ${DEVICE_MAKE_XPATH}    //input[@id="name"]
 ${DEVICE_NAME_XPATH}    //input[@placeholder="Ügyfél"]
 ${DEVICE_LOCATION_XPATH}    //input[@placeholder="Telephely"]
 ${DEVICE_DESCRIPTION_XPATH}    //textarea[@id="Desc"]
 ${DEVICE_COMMENT_XPATH}    //textarea[@id="Comm"]
-${EXCEL_EXPORT_BUTTON}    //button[@aria-label="Excel Export"]
-${SEARCHBAR}    //input[@id="Grid_ToolbarSearchBox"]
-${SEARCH_ICON}    //span[@class='e-searchclear e-search-icon e-icons e-input-group-icon']
-
 
 *** Keywords ***
 Open Chrome
@@ -36,6 +42,22 @@ Navigate to Partners
     Wait Until Element Is Visible    ${PARTNERS_URL}
     Click Element    ${PARTNERS_URL}
 
+Navigate to Locations
+    Wait Until Element Is Visible   ${LOCATIONS_URL} 
+    Click Element    ${LOCATIONS_URL}
+
+Navigate to Devices
+    Wait Until Element Is Visible    ${DEVICE_URL}
+    Click Element    ${DEVICE_URL}
+
+Navigate to Profile
+    [Arguments]    ${person_body}
+    ${street_name}    Set Variable    ${person_body}[address][street_name]
+    ${profile}    Set Variable    //a[contains(.,"${street_name}")]
+    Wait Until Element Is Visible    ${profile}
+    Sleep    2
+    Click Link    ${profile}
+
 Get random User Data from local JSON File
     ${person_index}    Generate Random String    2    [NUMBERS]
     ${json_file}    Get File    ${CURDIR}/random_people.json
@@ -43,6 +65,13 @@ Get random User Data from local JSON File
     Set Global Variable    ${person_body}    ${json_data}[${person_index}]
     RETURN    ${json_data}[${person_index}]
  
+Get random Device Data from local JSON File
+    ${device_index}    Generate Random String    2    [NUMBERS]
+    ${json_file}    Get File    ${CURDIR}/random_device.json
+    ${json_data}    Evaluate    json.loads('''${json_file}''')    json
+    Set Global Variable    ${device_body}    ${json_data}[${device_index}]
+    RETURN    ${json_data}[${device_index}]
+  
 Add a Partner
     [Arguments]    ${person_body}
     ${first_name}    Set Variable   ${person_body}[first_name]
@@ -59,10 +88,6 @@ Add a Partner
     Input Text    ${PARTNER_EMAIL_XPATH}    ${email}
     Input Text    ${PARTNER_COMMENT_XPATH}    ${id}
     Click Button    ${SAVE_BUTTON}
-
-Navigate to Locations
-    Wait Until Element Is Visible   ${LOCATIONS_URL} 
-    Click Element    ${LOCATIONS_URL}
 
 Add a Location
     [Arguments]    ${person_body}
@@ -86,18 +111,6 @@ Add a Location
     Input Text    ${LOCATION_ZIP_CODE_XPATH}    ${zip_code}
     Input Text    ${LOCATION_STREET_XPATH}    ${street_name}
     Click Button    ${SAVE_BUTTON}
-
-Navigate to Devices
-    Wait Until Element Is Visible    ${DEVICE_URL}
-    Click Element    ${DEVICE_URL}
-
-Get random Device Data from local JSON File
-    ${device_index}    Generate Random String    2    [NUMBERS]
-    ${json_file}    Get File    ${CURDIR}/random_device.json
-    ${json_data}    Evaluate    json.loads('''${json_file}''')    json
-    Set Global Variable    ${device_body}    ${json_data}[${device_index}]
-    RETURN    ${json_data}[${device_index}]
-  
 
 Add a Device
     [Arguments]    ${person_body}    ${device_body}
@@ -135,12 +148,6 @@ Search in List
     Input Text    ${SEARCHBAR}    ${name}
     Sleep    1
     Click Element    ${SEARCH_ICON}
-
-Navigate to Profile
-    [Arguments]    ${person_body}
-    ${street_name}    Set Variable    ${person_body}[address][street_name]
-    Sleep    1
-    Click Link    //a[contains(.,"${street_name}")]
 
 #CODE UNSTABLE
 #RUNTIME SUCCESS DEPENDS ON WEBSITE PERFORMANCE
