@@ -7,3 +7,9 @@ Prerequisites
 -   Python 3.x (Robot Framework is Python-based)
 -   Robot Framework (Installation: pip install robotframework)
 -   Robot Framework SeleniumLibrary (Installation: pip install --upgrade robotframework-seleniumlibrary)
+
+Libraries used
+-------------
+SeleniumLibrary
+OperatingSystem
+String
