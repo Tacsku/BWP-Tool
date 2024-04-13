@@ -1,34 +1,47 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.0 (Python 3.12.2 on win32)" generated="2024-04-10T14:25:55.646655" rpa="false" schemaversion="5">
+<robot generator="Robot 7.0 (Python 3.12.2 on win32)" generated="2024-04-13T15:21:06.485924" rpa="false" schemaversion="5">
 <suite id="s1" name="BWP Tool Test" source="C:\Users\a200108674\OneDrive - Deutsche Telekom AG\Desktop\Robot Project\BWP_Tool_Test">
 <suite id="s1-s1" name="Tests" source="C:\Users\a200108674\OneDrive - Deutsche Telekom AG\Desktop\Robot Project\BWP_Tool_Test\tests">
 <suite id="s1-s1-s1" name="Bwp Tool Test" source="C:\Users\a200108674\OneDrive - Deutsche Telekom AG\Desktop\Robot Project\BWP_Tool_Test\tests\bwp_tool_test.robot">
-<test id="s1-s1-s1-t1" name="BWP Website Test - Partner, Location and Device Test" line="7">
+<test id="s1-s1-s1-t1" name="BWP Website Test - Partner, Location and Device Test" line="6">
 <kw name="Open Chrome" owner="variables">
 <kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2024-04-10T14:25:56.268891" level="INFO">Opening browser 'Chrome' to base url 'https://bwpool.azurewebsites.net/'.</msg>
-<msg time="2024-04-10T14:25:57.384013" level="WARN">Exception managing chrome: error sending request for url (https://googlechromelabs.github.io/chrome-for-testing/known-good-versions-with-downloads.json): error trying to connect: dns error: No such host is known. (os error 11001)</msg>
-<msg time="2024-04-10T14:25:57.390686" level="WARN">The chromedriver version (122.0.6261.128) detected in PATH at C:\Users\a200108674\OneDrive - Deutsche Telekom AG\Desktop\Test Automation Engineer Study Files\4.exam Robot Framework - Bence\chromedriver-win64\chromedriver.exe might not be compatible with the detected chrome version (123.0.6312.106); currently, chromedriver  is recommended for chrome 123.*, so it is advised to delete the driver in PATH and retry</msg>
+<msg time="2024-04-13T15:21:07.271386" level="INFO">Opening browser 'Chrome' to base url 'https://bwpool.azurewebsites.net/'.</msg>
+<msg time="2024-04-13T15:21:09.754996" level="WARN">Exception managing chrome: error sending request for url (https://googlechromelabs.github.io/chrome-for-testing/known-good-versions-with-downloads.json): error trying to connect: dns error: No such host is known. (os error 11001)</msg>
+<msg time="2024-04-13T15:21:09.771818" level="WARN">The chromedriver version (122.0.6261.128) detected in PATH at C:\Users\a200108674\OneDrive - Deutsche Telekom AG\Desktop\Test Automation Engineer Study Files\4.exam Robot Framework - Bence\chromedriver-win64\chromedriver.exe might not be compatible with the detected chrome version (123.0.6312.123); currently, chromedriver  is recommended for chrome 123.*, so it is advised to delete the driver in PATH and retry</msg>
 <arg>${MAIN_URL}</arg>
 <arg>${BROWSER}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2024-04-10T14:25:56.266680" elapsed="5.104467"/>
+<status status="PASS" start="2024-04-13T15:21:07.269345" elapsed="6.759162"/>
 </kw>
-<status status="PASS" start="2024-04-10T14:25:56.263757" elapsed="5.108589"/>
+<status status="PASS" start="2024-04-13T15:21:07.267320" elapsed="6.762513"/>
 </kw>
 <kw name="Navigate to Partners" owner="variables">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${PARTNERS_URL}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-04-13T15:21:14.032316" elapsed="0.058155"/>
+</kw>
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2024-04-10T14:26:01.374569" level="INFO">Clicking element '//a[@href="Customer"]'.</msg>
+<msg time="2024-04-13T15:21:14.092832" level="INFO">Clicking element '//a[@href="Customer"]'.</msg>
 <arg>${PARTNERS_URL}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2024-04-10T14:26:01.373536" elapsed="0.764369"/>
+<status status="PASS" start="2024-04-13T15:21:14.091821" elapsed="0.811468"/>
 </kw>
-<status status="PASS" start="2024-04-10T14:26:01.372346" elapsed="0.765559"/>
+<status status="PASS" start="2024-04-13T15:21:14.029833" elapsed="0.874503"/>
 </kw>
 <kw name="Get random User Data from local JSON File" owner="variables">
+<kw name="Generate Random String" owner="String">
+<msg time="2024-04-13T15:21:14.906352" level="INFO">${person_index} = 36</msg>
+<var>${person_index}</var>
+<arg>2</arg>
+<arg>[NUMBERS]</arg>
+<doc>Generates a string with a desired ``length`` from the given ``chars``.</doc>
+<status status="PASS" start="2024-04-13T15:21:14.906352" elapsed="0.001000"/>
+</kw>
 <kw name="Get File" owner="OperatingSystem">
-<msg time="2024-04-10T14:26:02.139918" level="INFO" html="true">Getting file '&lt;a href="file://C:\Users\a200108674\OneDrive - Deutsche Telekom AG\Desktop\Robot Project\BWP_Tool_Test\resources\random_people.json"&gt;C:\Users\a200108674\OneDrive - Deutsche Telekom AG\Desktop\Robot Project\BWP_Tool_Test\resources\random_people.json&lt;/a&gt;'.</msg>
-<msg time="2024-04-10T14:26:02.141219" level="INFO">${json_file} = [
+<msg time="2024-04-13T15:21:14.908351" level="INFO" html="true">Getting file '&lt;a href="file://C:\Users\a200108674\OneDrive - Deutsche Telekom AG\Desktop\Robot Project\BWP_Tool_Test\resources\random_people.json"&gt;C:\Users\a200108674\OneDrive - Deutsche Telekom AG\Desktop\Robot Project\BWP_Tool_Test\resources\random_people.json&lt;/a&gt;'.</msg>
+<msg time="2024-04-13T15:21:14.910748" level="INFO">${json_file} = [
     {
       "id": 7039,
       "uid": "c02ac60c-23d5-4754-91d1-eab16e3304fc",
@@ -40,54 +53,741 @@
 <var>${json_file}</var>
 <arg>C:\\Users\\a200108674\\OneDrive - Deutsche Telekom AG\\Desktop\\Robot Project\\BWP_Tool_Test\\resources/random_people.json</arg>
 <doc>Returns the contents of a specified file.</doc>
-<status status="PASS" start="2024-04-10T14:26:02.138917" elapsed="0.003321"/>
+<status status="PASS" start="2024-04-13T15:21:14.907352" elapsed="0.003396"/>
 </kw>
 <kw name="Evaluate" owner="BuiltIn">
-<msg time="2024-04-10T14:26:02.153922" level="INFO">${json_data} = [{'id': 7039, 'uid': 'c02ac60c-23d5-4754-91d1-eab16e3304fc', 'password': 'B5DIXvcAUu', 'first_name': 'Roni', 'last_name': 'Boyer', 'username': 'roni.boyer', 'email': 'roni.boyer@email.com', 'avatar': ...</msg>
+<msg time="2024-04-13T15:21:14.921794" level="INFO">${json_data} = [{'id': 7039, 'uid': 'c02ac60c-23d5-4754-91d1-eab16e3304fc', 'password': 'B5DIXvcAUu', 'first_name': 'Roni', 'last_name': 'Boyer', 'username': 'roni.boyer', 'email': 'roni.boyer@email.com', 'avatar': ...</msg>
 <var>${json_data}</var>
 <arg>json.loads('''${json_file}''')</arg>
 <arg>json</arg>
 <doc>Evaluates the given expression in Python and returns the result.</doc>
-<status status="PASS" start="2024-04-10T14:26:02.142238" elapsed="0.012692"/>
+<status status="PASS" start="2024-04-13T15:21:14.910748" elapsed="0.011046"/>
 </kw>
+<kw name="Set Global Variable" owner="BuiltIn">
+<msg time="2024-04-13T15:21:14.924798" level="INFO">${person_body} = {'id': 2410, 'uid': 'd1c2b6b8-1e05-4e57-84a2-2ca235460a3c', 'password': 'E9ve2UyfaL', 'first_name': 'Israel', 'last_name': 'MacGyver', 'username': 'israel.macgyver', 'email': 'israel.macgyver@email.co...</msg>
+<arg>${person_body}</arg>
+<arg>${json_data}[${person_index}]</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="PASS" start="2024-04-13T15:21:14.922795" elapsed="0.003002"/>
+</kw>
+<return>
+<value>${json_data}[${person_index}]</value>
+<status status="PASS" start="2024-04-13T15:21:14.925797" elapsed="0.000999"/>
+</return>
+<msg time="2024-04-13T15:21:14.927957" level="INFO">${person_body} = {'id': 2410, 'uid': 'd1c2b6b8-1e05-4e57-84a2-2ca235460a3c', 'password': 'E9ve2UyfaL', 'first_name': 'Israel', 'last_name': 'MacGyver', 'username': 'israel.macgyver', 'email': 'israel.macgyver@email.co...</msg>
+<var>${person_body}</var>
+<status status="PASS" start="2024-04-13T15:21:14.905352" elapsed="0.022605"/>
+</kw>
+<kw name="Add a Partner" owner="variables">
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2024-04-10T14:26:02.157474" level="INFO">${first_name} = Roni</msg>
+<msg time="2024-04-13T15:21:14.930751" level="INFO">${first_name} = Israel</msg>
 <var>${first_name}</var>
-<arg>${json_data}[0][first_name]</arg>
+<arg>${person_body}[first_name]</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2024-04-10T14:26:02.154930" elapsed="0.002544"/>
+<status status="PASS" start="2024-04-13T15:21:14.930204" elapsed="0.001561"/>
 </kw>
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2024-04-10T14:26:02.159474" level="INFO">${last_name} = Boyer</msg>
+<msg time="2024-04-13T15:21:14.934926" level="INFO">${last_name} = MacGyver</msg>
 <var>${last_name}</var>
-<arg>${json_data}[0][last_name]</arg>
+<arg>${person_body}[last_name]</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2024-04-10T14:26:02.158474" elapsed="0.001000"/>
+<status status="PASS" start="2024-04-13T15:21:14.933841" elapsed="0.002124"/>
 </kw>
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2024-04-10T14:26:02.162948" level="INFO">${name} = Roni Boyer</msg>
+<msg time="2024-04-13T15:21:14.936982" level="INFO">${name} = Israel MacGyver</msg>
 <var>${name}</var>
 <arg>${first_name} ${last_name}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2024-04-10T14:26:02.160495" elapsed="0.003846"/>
+<status status="PASS" start="2024-04-13T15:21:14.935965" elapsed="0.002056"/>
 </kw>
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2024-04-10T14:26:02.168848" level="INFO">${email} = roni.boyer@email.com</msg>
+<msg time="2024-04-13T15:21:14.939050" level="INFO">${email} = israel.macgyver@email.com</msg>
 <var>${email}</var>
-<arg>${json_data}[0][email]</arg>
+<arg>${person_body}[email]</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2024-04-10T14:26:02.166369" elapsed="0.003522"/>
+<status status="PASS" start="2024-04-13T15:21:14.938539" elapsed="0.001525"/>
 </kw>
-<status status="PASS" start="2024-04-10T14:26:02.137905" elapsed="0.031986"/>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-04-13T15:21:14.941065" level="INFO">${id} = 2410</msg>
+<var>${id}</var>
+<arg>${person_body}[id]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-04-13T15:21:14.940064" elapsed="0.001001"/>
 </kw>
-<status status="PASS" start="2024-04-10T14:25:56.261551" elapsed="5.909337"/>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-04-13T15:21:15.943838" level="INFO">Slept 1 second.</msg>
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-04-13T15:21:14.942064" elapsed="1.002799"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${ADD_BUTTON}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-04-13T15:21:15.945866" elapsed="0.148232"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2024-04-13T15:21:16.096810" level="INFO">Clicking button '//button[@aria-label="Add"]'.</msg>
+<arg>${ADD_BUTTON}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2024-04-13T15:21:16.095143" elapsed="0.217807"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${PARTNER_NAME_XPATH}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-04-13T15:21:16.314109" elapsed="5.114840"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-04-13T15:21:21.429979" level="INFO">Typing text 'Israel MacGyver' into text field '//input[@id="name"]'.</msg>
+<arg>${PARTNER_NAME_XPATH}</arg>
+<arg>${name}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-04-13T15:21:21.428949" elapsed="0.210522"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-04-13T15:21:21.641467" level="INFO">Typing text 'israel.macgyver@email.com' into text field '//input[@id="email"]'.</msg>
+<arg>${PARTNER_EMAIL_XPATH}</arg>
+<arg>${email}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-04-13T15:21:21.640472" elapsed="0.315888"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-04-13T15:21:21.958897" level="INFO">Typing text '2410' into text field '//input[@id="comment"]'.</msg>
+<arg>${PARTNER_COMMENT_XPATH}</arg>
+<arg>${id}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-04-13T15:21:21.957382" elapsed="0.350193"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2024-04-13T15:21:22.310574" level="INFO">Clicking button '//button[@class="e-control e-btn e-lib e-control e-btn e-lib e-primary e-flat"]'.</msg>
+<arg>${SAVE_BUTTON}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2024-04-13T15:21:22.308577" elapsed="0.233323"/>
+</kw>
+<arg>${person_body}</arg>
+<status status="PASS" start="2024-04-13T15:21:14.928976" elapsed="7.612924"/>
+</kw>
+<kw name="Navigate to Locations" owner="variables">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${LOCATIONS_URL}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-04-13T15:21:22.544583" elapsed="0.062250"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-04-13T15:21:22.607888" level="INFO">Clicking element '//a[@href="Location"]'.</msg>
+<arg>${LOCATIONS_URL}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-04-13T15:21:22.606833" elapsed="2.176745"/>
+</kw>
+<status status="PASS" start="2024-04-13T15:21:22.543558" elapsed="2.240020"/>
+</kw>
+<kw name="Add a Location" owner="variables">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-04-13T15:21:24.799138" level="INFO">${first_name} = Israel</msg>
+<var>${first_name}</var>
+<arg>${person_body}[first_name]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-04-13T15:21:24.791104" elapsed="0.009974"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-04-13T15:21:24.803755" level="INFO">${last_name} = MacGyver</msg>
+<var>${last_name}</var>
+<arg>${person_body}[last_name]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-04-13T15:21:24.802177" elapsed="0.005882"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-04-13T15:21:24.808059" level="INFO">${name} = Israel MacGyver</msg>
+<var>${name}</var>
+<arg>${first_name} ${last_name}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-04-13T15:21:24.808059" elapsed="0.000000"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-04-13T15:21:24.823885" level="INFO">${id} = 2410</msg>
+<var>${id}</var>
+<arg>${person_body}[id]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-04-13T15:21:24.816962" elapsed="0.009268"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-04-13T15:21:24.832076" level="INFO">${city} = South Merletown</msg>
+<var>${city}</var>
+<arg>${person_body}[address][city]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-04-13T15:21:24.827597" elapsed="0.004479"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-04-13T15:21:24.843042" level="INFO">${street_name} = Kennith Ford</msg>
+<var>${street_name}</var>
+<arg>${person_body}[address][street_name]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-04-13T15:21:24.840226" elapsed="0.006520"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-04-13T15:21:24.850760" level="INFO">${zip_code} = 85484-9475</msg>
+<var>${zip_code}</var>
+<arg>${person_body}[address][zip_code]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-04-13T15:21:24.847737" elapsed="0.004032"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-04-13T15:21:25.856436" level="INFO">Slept 1 second.</msg>
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-04-13T15:21:24.853759" elapsed="1.002677"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${ADD_BUTTON}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-04-13T15:21:25.856436" elapsed="0.040053"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2024-04-13T15:21:25.898507" level="INFO">Clicking button '//button[@aria-label="Add"]'.</msg>
+<arg>${ADD_BUTTON}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2024-04-13T15:21:25.896489" elapsed="0.129592"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${LOCATION_NAME_XPATH}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-04-13T15:21:26.027098" elapsed="2.599877"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-04-13T15:21:28.630975" level="INFO">Typing text 'Israel MacGyver' into text field '//input[@placeholder="Ügyfél"]'.</msg>
+<arg>${LOCATION_NAME_XPATH}</arg>
+<arg>${name}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-04-13T15:21:28.627971" elapsed="0.453460"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-04-13T15:21:30.084255" level="INFO">Slept 1 second.</msg>
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-04-13T15:21:29.082582" elapsed="1.003707"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-04-13T15:21:30.090290" level="INFO">Clicking element '//li[.='Israel MacGyver']'.</msg>
+<arg>//li[.='${name}']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-04-13T15:21:30.087348" elapsed="0.756707"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-04-13T15:21:30.846057" level="INFO">Typing text 'South Merletown' into text field '//input[@id='varos']'.</msg>
+<arg>${LOCATION_CITY_XPATH}</arg>
+<arg>${city}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-04-13T15:21:30.845055" elapsed="0.397342"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-04-13T15:21:31.244441" level="INFO">Typing text '85484-9475' into text field '//input[@id='zip']'.</msg>
+<arg>${LOCATION_ZIP_CODE_XPATH}</arg>
+<arg>${zip_code}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-04-13T15:21:31.243429" elapsed="0.452476"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-04-13T15:21:31.701026" level="INFO">Typing text 'Kennith Ford' into text field '//input[@id='utca']'.</msg>
+<arg>${LOCATION_STREET_XPATH}</arg>
+<arg>${street_name}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-04-13T15:21:31.697899" elapsed="0.612319"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2024-04-13T15:21:32.314716" level="INFO">Clicking button '//button[@class="e-control e-btn e-lib e-control e-btn e-lib e-primary e-flat"]'.</msg>
+<arg>${SAVE_BUTTON}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2024-04-13T15:21:32.311211" elapsed="0.381390"/>
+</kw>
+<arg>${person_body}</arg>
+<status status="PASS" start="2024-04-13T15:21:24.791104" elapsed="7.902700"/>
+</kw>
+<kw name="Navigate to Devices" owner="variables">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${DEVICE_URL}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-04-13T15:21:32.701367" elapsed="0.339756"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-04-13T15:21:33.045114" level="INFO">Clicking element '//a[@href="Tool"]'.</msg>
+<arg>${DEVICE_URL}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-04-13T15:21:33.042128" elapsed="1.047943"/>
+</kw>
+<status status="PASS" start="2024-04-13T15:21:32.696419" elapsed="1.394650"/>
+</kw>
+<for flavor="IN RANGE">
+<iter>
+<kw name="Get random Device Data from local JSON File" owner="variables">
+<kw name="Generate Random String" owner="String">
+<msg time="2024-04-13T15:21:34.110080" level="INFO">${device_index} = 16</msg>
+<var>${device_index}</var>
+<arg>2</arg>
+<arg>[NUMBERS]</arg>
+<doc>Generates a string with a desired ``length`` from the given ``chars``.</doc>
+<status status="PASS" start="2024-04-13T15:21:34.106678" elapsed="0.004403"/>
+</kw>
+<kw name="Get File" owner="OperatingSystem">
+<msg time="2024-04-13T15:21:34.115019" level="INFO" html="true">Getting file '&lt;a href="file://C:\Users\a200108674\OneDrive - Deutsche Telekom AG\Desktop\Robot Project\BWP_Tool_Test\resources\random_device.json"&gt;C:\Users\a200108674\OneDrive - Deutsche Telekom AG\Desktop\Robot Project\BWP_Tool_Test\resources\random_device.json&lt;/a&gt;'.</msg>
+<msg time="2024-04-13T15:21:34.176712" level="INFO">${json_file} = [
+    {
+      "id": 9969,
+      "uid": "f64ef7f9-4c71-43c6-b93b-77bdcfb1fc84",
+      "build_number": 376,
+      "manufacturer": "Acer",
+      "model": "Galaxy S8 Plus",
+      "platform": "iOS",
+      ...</msg>
+<var>${json_file}</var>
+<arg>C:\\Users\\a200108674\\OneDrive - Deutsche Telekom AG\\Desktop\\Robot Project\\BWP_Tool_Test\\resources/random_device.json</arg>
+<doc>Returns the contents of a specified file.</doc>
+<status status="PASS" start="2024-04-13T15:21:34.112074" elapsed="0.066887"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2024-04-13T15:21:34.193281" level="INFO">${json_data} = [{'id': 9969, 'uid': 'f64ef7f9-4c71-43c6-b93b-77bdcfb1fc84', 'build_number': 376, 'manufacturer': 'Acer', 'model': 'Galaxy S8 Plus', 'platform': 'iOS', 'serial_number': 'ejfjnRNInxh0363JC2WM', 'versio...</msg>
+<var>${json_data}</var>
+<arg>json.loads('''${json_file}''')</arg>
+<arg>json</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2024-04-13T15:21:34.178961" elapsed="0.022757"/>
+</kw>
+<kw name="Set Global Variable" owner="BuiltIn">
+<msg time="2024-04-13T15:21:34.219351" level="INFO">${device_body} = {'id': 8151, 'uid': '4b631227-464c-4a10-b3ea-fb9e884787b6', 'build_number': 389, 'manufacturer': 'Dell', 'model': 'iPhone 4S', 'platform': 'BlackBerry', 'serial_number': 'CdNevWfqDPQw4iJgUhtyCqwCggV12...</msg>
+<arg>${device_body}</arg>
+<arg>${json_data}[${device_index}]</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="PASS" start="2024-04-13T15:21:34.201718" elapsed="0.017633"/>
+</kw>
+<return>
+<value>${json_data}[${device_index}]</value>
+<status status="PASS" start="2024-04-13T15:21:34.219351" elapsed="0.000000"/>
+</return>
+<msg time="2024-04-13T15:21:34.226063" level="INFO">${device_body} = {'id': 8151, 'uid': '4b631227-464c-4a10-b3ea-fb9e884787b6', 'build_number': 389, 'manufacturer': 'Dell', 'model': 'iPhone 4S', 'platform': 'BlackBerry', 'serial_number': 'CdNevWfqDPQw4iJgUhtyCqwCggV12...</msg>
+<var>${device_body}</var>
+<status status="PASS" start="2024-04-13T15:21:34.102071" elapsed="0.125167"/>
+</kw>
+<kw name="Add a Device" owner="variables">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-04-13T15:21:34.238570" level="INFO">${first_name} = Israel</msg>
+<var>${first_name}</var>
+<arg>${person_body}[first_name]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-04-13T15:21:34.235011" elapsed="0.004561"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-04-13T15:21:34.242605" level="INFO">${last_name} = MacGyver</msg>
+<var>${last_name}</var>
+<arg>${person_body}[last_name]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-04-13T15:21:34.240573" elapsed="0.003029"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-04-13T15:21:34.245599" level="INFO">${name} = Israel MacGyver</msg>
+<var>${name}</var>
+<arg>${first_name} ${last_name}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-04-13T15:21:34.243602" elapsed="0.003012"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-04-13T15:21:34.254008" level="INFO">${manufacturer} = Dell</msg>
+<var>${manufacturer}</var>
+<arg>${device_body}[manufacturer]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-04-13T15:21:34.247604" elapsed="0.006404"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-04-13T15:21:34.258005" level="INFO">${model} = iPhone 4S</msg>
+<var>${model}</var>
+<arg>${device_body}[model]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-04-13T15:21:34.256008" elapsed="0.003000"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-04-13T15:21:34.262008" level="INFO">${platform} = BlackBerry</msg>
+<var>${platform}</var>
+<arg>${device_body}[platform]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-04-13T15:21:34.260008" elapsed="0.003012"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-04-13T15:21:34.269445" level="INFO">${serial_number} = CdNevWfqDPQw4iJgUhtyCqwCggV12T</msg>
+<var>${serial_number}</var>
+<arg>${device_body}[serial_number]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-04-13T15:21:34.266397" elapsed="0.004036"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-04-13T15:21:35.272865" level="INFO">Slept 1 second.</msg>
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-04-13T15:21:34.271418" elapsed="1.002754"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${ADD_BUTTON}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-04-13T15:21:35.274172" elapsed="0.032246"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2024-04-13T15:21:35.308782" level="INFO">Clicking button '//button[@aria-label="Add"]'.</msg>
+<arg>${ADD_BUTTON}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2024-04-13T15:21:35.307460" elapsed="0.103718"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${DEVICE_MAKE_XPATH}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-04-13T15:21:35.412201" elapsed="4.546723"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-04-13T15:21:39.961156" level="INFO">Typing text 'Dell iPhone 4S' into text field '//input[@id="name"]'.</msg>
+<arg>${DEVICE_MAKE_XPATH}</arg>
+<arg>${manufacturer} ${model}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-04-13T15:21:39.960142" elapsed="0.208641"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-04-13T15:21:40.170792" level="INFO">Typing text 'Israel MacGyver' into text field '//input[@placeholder="Ügyfél"]'.</msg>
+<arg>${DEVICE_NAME_XPATH}</arg>
+<arg>${name}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-04-13T15:21:40.168783" elapsed="0.288484"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-04-13T15:21:41.459858" level="INFO">Slept 1 second.</msg>
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-04-13T15:21:40.458290" elapsed="1.001568"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-04-13T15:21:41.465733" level="INFO">Clicking element '//li[.='Israel MacGyver']'.</msg>
+<arg>//li[.='${name}']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-04-13T15:21:41.459858" elapsed="0.309961"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-04-13T15:21:41.773801" level="INFO">Typing text 'BlackBerry' into text field '//textarea[@id="Desc"]'.</msg>
+<arg>${DEVICE_DESCRIPTION_XPATH}</arg>
+<arg>${platform}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-04-13T15:21:41.770814" elapsed="0.648196"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-04-13T15:21:42.421011" level="INFO">Typing text 'CdNevWfqDPQw4iJgUhtyCqwCggV12T' into text field '//textarea[@id="Comm"]'.</msg>
+<arg>${DEVICE_COMMENT_XPATH}</arg>
+<arg>${serial_number}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-04-13T15:21:42.420008" elapsed="0.616060"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2024-04-13T15:21:43.037069" level="INFO">Clicking button '//button[@class="e-control e-btn e-lib e-control e-btn e-lib e-primary e-flat"]'.</msg>
+<arg>${SAVE_BUTTON}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2024-04-13T15:21:43.036068" elapsed="0.258208"/>
+</kw>
+<arg>${person_body}</arg>
+<arg>${device_body}</arg>
+<status status="PASS" start="2024-04-13T15:21:34.228263" elapsed="9.067235"/>
+</kw>
+<var name="${device}">0</var>
+<status status="PASS" start="2024-04-13T15:21:34.097067" elapsed="9.199667"/>
+</iter>
+<iter>
+<kw name="Get random Device Data from local JSON File" owner="variables">
+<kw name="Generate Random String" owner="String">
+<msg time="2024-04-13T15:21:43.309059" level="INFO">${device_index} = 33</msg>
+<var>${device_index}</var>
+<arg>2</arg>
+<arg>[NUMBERS]</arg>
+<doc>Generates a string with a desired ``length`` from the given ``chars``.</doc>
+<status status="PASS" start="2024-04-13T15:21:43.305926" elapsed="0.004466"/>
+</kw>
+<kw name="Get File" owner="OperatingSystem">
+<msg time="2024-04-13T15:21:43.313903" level="INFO" html="true">Getting file '&lt;a href="file://C:\Users\a200108674\OneDrive - Deutsche Telekom AG\Desktop\Robot Project\BWP_Tool_Test\resources\random_device.json"&gt;C:\Users\a200108674\OneDrive - Deutsche Telekom AG\Desktop\Robot Project\BWP_Tool_Test\resources\random_device.json&lt;/a&gt;'.</msg>
+<msg time="2024-04-13T15:21:43.321852" level="INFO">${json_file} = [
+    {
+      "id": 9969,
+      "uid": "f64ef7f9-4c71-43c6-b93b-77bdcfb1fc84",
+      "build_number": 376,
+      "manufacturer": "Acer",
+      "model": "Galaxy S8 Plus",
+      "platform": "iOS",
+      ...</msg>
+<var>${json_file}</var>
+<arg>C:\\Users\\a200108674\\OneDrive - Deutsche Telekom AG\\Desktop\\Robot Project\\BWP_Tool_Test\\resources/random_device.json</arg>
+<doc>Returns the contents of a specified file.</doc>
+<status status="PASS" start="2024-04-13T15:21:43.312232" elapsed="0.011617"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2024-04-13T15:21:43.338610" level="INFO">${json_data} = [{'id': 9969, 'uid': 'f64ef7f9-4c71-43c6-b93b-77bdcfb1fc84', 'build_number': 376, 'manufacturer': 'Acer', 'model': 'Galaxy S8 Plus', 'platform': 'iOS', 'serial_number': 'ejfjnRNInxh0363JC2WM', 'versio...</msg>
+<var>${json_data}</var>
+<arg>json.loads('''${json_file}''')</arg>
+<arg>json</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2024-04-13T15:21:43.324913" elapsed="0.014784"/>
+</kw>
+<kw name="Set Global Variable" owner="BuiltIn">
+<msg time="2024-04-13T15:21:43.344638" level="INFO">${device_body} = {'id': 6430, 'uid': 'cba1b026-b72b-400b-ac20-4e1e82841ffc', 'build_number': 279, 'manufacturer': 'Google', 'model': 'Mi 8 Lite', 'platform': 'Android OS', 'serial_number': 'UVr864F8zUbyYOAUd4cFOW9hpsZ...</msg>
+<arg>${device_body}</arg>
+<arg>${json_data}[${device_index}]</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="PASS" start="2024-04-13T15:21:43.340648" elapsed="0.005993"/>
+</kw>
+<return>
+<value>${json_data}[${device_index}]</value>
+<status status="PASS" start="2024-04-13T15:21:43.348807" elapsed="0.003534"/>
+</return>
+<msg time="2024-04-13T15:21:43.355378" level="INFO">${device_body} = {'id': 6430, 'uid': 'cba1b026-b72b-400b-ac20-4e1e82841ffc', 'build_number': 279, 'manufacturer': 'Google', 'model': 'Mi 8 Lite', 'platform': 'Android OS', 'serial_number': 'UVr864F8zUbyYOAUd4cFOW9hpsZ...</msg>
+<var>${device_body}</var>
+<status status="PASS" start="2024-04-13T15:21:43.301360" elapsed="0.055012"/>
+</kw>
+<kw name="Add a Device" owner="variables">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-04-13T15:21:43.369383" level="INFO">${first_name} = Israel</msg>
+<var>${first_name}</var>
+<arg>${person_body}[first_name]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-04-13T15:21:43.362439" elapsed="0.008271"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-04-13T15:21:43.376114" level="INFO">${last_name} = MacGyver</msg>
+<var>${last_name}</var>
+<arg>${person_body}[last_name]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-04-13T15:21:43.372076" elapsed="0.006035"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-04-13T15:21:43.387521" level="INFO">${name} = Israel MacGyver</msg>
+<var>${name}</var>
+<arg>${first_name} ${last_name}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-04-13T15:21:43.379139" elapsed="0.010378"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-04-13T15:21:43.394070" level="INFO">${manufacturer} = Google</msg>
+<var>${manufacturer}</var>
+<arg>${device_body}[manufacturer]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-04-13T15:21:43.390517" elapsed="0.004607"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-04-13T15:21:43.399632" level="INFO">${model} = Mi 8 Lite</msg>
+<var>${model}</var>
+<arg>${device_body}[model]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-04-13T15:21:43.396160" elapsed="0.005898"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-04-13T15:21:43.405056" level="INFO">${platform} = Android OS</msg>
+<var>${platform}</var>
+<arg>${device_body}[platform]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-04-13T15:21:43.403065" elapsed="0.002991"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-04-13T15:21:43.409053" level="INFO">${serial_number} = UVr864F8zUbyYOAUd4cFOW9hpsZuGn</msg>
+<var>${serial_number}</var>
+<arg>${device_body}[serial_number]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-04-13T15:21:43.407055" elapsed="0.002995"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-04-13T15:21:44.412428" level="INFO">Slept 1 second.</msg>
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-04-13T15:21:43.411067" elapsed="1.001361"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${ADD_BUTTON}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-04-13T15:21:44.413441" elapsed="1.397369"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2024-04-13T15:21:45.813806" level="INFO">Clicking button '//button[@aria-label="Add"]'.</msg>
+<arg>${ADD_BUTTON}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2024-04-13T15:21:45.811803" elapsed="0.795824"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${DEVICE_MAKE_XPATH}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-04-13T15:21:46.607627" elapsed="1.592376"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-04-13T15:21:48.203762" level="INFO">Typing text 'Google Mi 8 Lite' into text field '//input[@id="name"]'.</msg>
+<arg>${DEVICE_MAKE_XPATH}</arg>
+<arg>${manufacturer} ${model}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-04-13T15:21:48.201092" elapsed="0.457998"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-04-13T15:21:48.664669" level="INFO">Typing text 'Israel MacGyver' into text field '//input[@placeholder="Ügyfél"]'.</msg>
+<arg>${DEVICE_NAME_XPATH}</arg>
+<arg>${name}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-04-13T15:21:48.660165" elapsed="0.568210"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-04-13T15:21:50.231054" level="INFO">Slept 1 second.</msg>
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-04-13T15:21:49.229393" elapsed="1.004304"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-04-13T15:21:50.237774" level="INFO">Clicking element '//li[.='Israel MacGyver']'.</msg>
+<arg>//li[.='${name}']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-04-13T15:21:50.234786" elapsed="0.221754"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-04-13T15:21:50.458539" level="INFO">Typing text 'Android OS' into text field '//textarea[@id="Desc"]'.</msg>
+<arg>${DEVICE_DESCRIPTION_XPATH}</arg>
+<arg>${platform}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-04-13T15:21:50.456540" elapsed="0.329036"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-04-13T15:21:50.788604" level="INFO">Typing text 'UVr864F8zUbyYOAUd4cFOW9hpsZuGn' into text field '//textarea[@id="Comm"]'.</msg>
+<arg>${DEVICE_COMMENT_XPATH}</arg>
+<arg>${serial_number}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-04-13T15:21:50.785576" elapsed="0.315421"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2024-04-13T15:21:51.103199" level="INFO">Clicking button '//button[@class="e-control e-btn e-lib e-control e-btn e-lib e-primary e-flat"]'.</msg>
+<arg>${SAVE_BUTTON}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2024-04-13T15:21:51.102041" elapsed="0.229540"/>
+</kw>
+<arg>${person_body}</arg>
+<arg>${device_body}</arg>
+<status status="PASS" start="2024-04-13T15:21:43.358409" elapsed="7.974177"/>
+</kw>
+<var name="${device}">1</var>
+<status status="PASS" start="2024-04-13T15:21:43.297793" elapsed="8.035790"/>
+</iter>
+<var>${device}</var>
+<value>2</value>
+<status status="PASS" start="2024-04-13T15:21:34.094072" elapsed="17.239511"/>
+</for>
+<kw name="Export to Excel" owner="variables">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${EXCEL_EXPORT_BUTTON}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-04-13T15:21:51.336588" elapsed="0.078760"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2024-04-13T15:21:51.418355" level="INFO">Clicking button '//button[@aria-label="Excel Export"]'.</msg>
+<arg>${EXCEL_EXPORT_BUTTON}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2024-04-13T15:21:51.416359" elapsed="2.637372"/>
+</kw>
+<status status="PASS" start="2024-04-13T15:21:51.334581" elapsed="2.720533"/>
+</kw>
+<kw name="Navigate to Locations" owner="variables">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${LOCATIONS_URL}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-04-13T15:21:54.060909" elapsed="0.174783"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-04-13T15:21:54.239750" level="INFO">Clicking element '//a[@href="Location"]'.</msg>
+<arg>${LOCATIONS_URL}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-04-13T15:21:54.237699" elapsed="0.774946"/>
+</kw>
+<status status="PASS" start="2024-04-13T15:21:54.058827" elapsed="0.953818"/>
+</kw>
+<kw name="Search in List" owner="variables">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-04-13T15:21:55.020064" level="INFO">${first_name} = Israel</msg>
+<var>${first_name}</var>
+<arg>${person_body}[first_name]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-04-13T15:21:55.017695" elapsed="0.003394"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-04-13T15:21:55.024191" level="INFO">${last_name} = MacGyver</msg>
+<var>${last_name}</var>
+<arg>${person_body}[last_name]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-04-13T15:21:55.022170" elapsed="0.004016"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-04-13T15:21:55.027381" level="INFO">${name} = Israel MacGyver</msg>
+<var>${name}</var>
+<arg>${first_name} ${last_name}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-04-13T15:21:55.026186" elapsed="0.002668"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-04-13T15:21:56.031583" level="INFO">Slept 1 second.</msg>
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-04-13T15:21:55.028854" elapsed="1.003806"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-04-13T15:21:56.034726" level="INFO">Typing text 'Israel MacGyver' into text field '//input[@id="Grid_ToolbarSearchBox"]'.</msg>
+<arg>${SEARCHBAR}</arg>
+<arg>${name}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-04-13T15:21:56.033703" elapsed="1.942346"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${SEARCH_ICON}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-04-13T15:21:57.977049" elapsed="0.189611"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-04-13T15:21:58.171690" level="INFO">Clicking element '//span[@class='e-searchclear e-search-icon e-icons e-input-group-icon']'.</msg>
+<arg>${SEARCH_ICON}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-04-13T15:21:58.168676" elapsed="0.384732"/>
+</kw>
+<arg>${person_body}</arg>
+<status status="PASS" start="2024-04-13T15:21:55.015690" elapsed="3.538705"/>
+</kw>
+<kw name="Navigate to Profile" owner="variables">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-04-13T15:21:58.562590" level="INFO">${street_name} = Kennith Ford</msg>
+<var>${street_name}</var>
+<arg>${person_body}[address][street_name]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-04-13T15:21:58.560591" elapsed="0.002999"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-04-13T15:21:58.568532" level="INFO">${profile} = //a[contains(.,"Kennith Ford")]</msg>
+<var>${profile}</var>
+<arg>//a[contains(.,"${street_name}")]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-04-13T15:21:58.564530" elapsed="0.006016"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${profile}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-04-13T15:21:58.572527" elapsed="0.164824"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-04-13T15:21:59.740844" level="INFO">Slept 1 second.</msg>
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-04-13T15:21:58.738350" elapsed="1.004212"/>
+</kw>
+<kw name="Click Link" owner="SeleniumLibrary">
+<msg time="2024-04-13T15:21:59.746500" level="INFO">Clicking link '//a[contains(.,"Kennith Ford")]'.</msg>
+<arg>${profile}</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<status status="PASS" start="2024-04-13T15:21:59.743561" elapsed="0.297039"/>
+</kw>
+<arg>${person_body}</arg>
+<status status="PASS" start="2024-04-13T15:21:58.556400" elapsed="1.485202"/>
+</kw>
+<status status="PASS" start="2024-04-13T15:21:07.263852" elapsed="52.781030"/>
 </test>
 <doc>BWP Website Testing - Partner, Location and Device Test</doc>
-<status status="PASS" start="2024-04-10T14:25:55.710698" elapsed="6.463597"/>
+<status status="PASS" start="2024-04-13T15:21:06.582968" elapsed="53.483942"/>
 </suite>
-<status status="PASS" start="2024-04-10T14:25:55.705161" elapsed="6.471665"/>
+<status status="PASS" start="2024-04-13T15:21:06.574969" elapsed="53.507398"/>
 </suite>
-<status status="PASS" start="2024-04-10T14:25:55.658584" elapsed="6.527788"/>
+<status status="PASS" start="2024-04-13T15:21:06.508281" elapsed="53.584417"/>
 </suite>
 <statistics>
 <total>
@@ -102,7 +802,7 @@
 </suite>
 </statistics>
 <errors>
-<msg time="2024-04-10T14:25:57.384013" level="WARN">Exception managing chrome: error sending request for url (https://googlechromelabs.github.io/chrome-for-testing/known-good-versions-with-downloads.json): error trying to connect: dns error: No such host is known. (os error 11001)</msg>
-<msg time="2024-04-10T14:25:57.390686" level="WARN">The chromedriver version (122.0.6261.128) detected in PATH at C:\Users\a200108674\OneDrive - Deutsche Telekom AG\Desktop\Test Automation Engineer Study Files\4.exam Robot Framework - Bence\chromedriver-win64\chromedriver.exe might not be compatible with the detected chrome version (123.0.6312.106); currently, chromedriver  is recommended for chrome 123.*, so it is advised to delete the driver in PATH and retry</msg>
+<msg time="2024-04-13T15:21:09.754996" level="WARN">Exception managing chrome: error sending request for url (https://googlechromelabs.github.io/chrome-for-testing/known-good-versions-with-downloads.json): error trying to connect: dns error: No such host is known. (os error 11001)</msg>
+<msg time="2024-04-13T15:21:09.771818" level="WARN">The chromedriver version (122.0.6261.128) detected in PATH at C:\Users\a200108674\OneDrive - Deutsche Telekom AG\Desktop\Test Automation Engineer Study Files\4.exam Robot Framework - Bence\chromedriver-win64\chromedriver.exe might not be compatible with the detected chrome version (123.0.6312.123); currently, chromedriver  is recommended for chrome 123.*, so it is advised to delete the driver in PATH and retry</msg>
 </errors>
 </robot>
